@@ -1,0 +1,22 @@
+FROM ubuntu
+
+RUN DEBIAN_FRONTEND=noninteractive apt-get update  -y  
+RUN DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
+        iputils-ping \
+        net-tools    \
+        nginx-extras \
+        nodejs
+
+COPY var/www/html /var/www/html
+
+COPY node var/www/node /var/www/node
+
+WORKDIR /var/www/node
+
+CMD ["node", "script.js", "&"]
+
+WORKDIR /etc/nginx
+
+CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 80

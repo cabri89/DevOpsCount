@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx:
+    image: 'nginx'
+    ports:
+      - '80:80'
+    volumes:
+      - /Users/lepetitdev/Dev/TPdocker/var/www/html:/var/www/html
+  mongodb:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - /Users/lepetitdev/Dev/TPdocker/opt/mongodb/db/:/data/db
