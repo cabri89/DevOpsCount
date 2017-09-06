@@ -5,10 +5,24 @@ services:
     ports:
       - '80:80'
     volumes:
-      - /Users/lepetitdev/Dev/TPdocker/var/www/html:/var/www/html
-  mongodb:
-    image: mongo
+      - /Users/lepetitdev/Dev/TPdocker/var/www:/var/www
+  mysql:
+    image: mysql/mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: root
     ports:
-      - '27017:27017'
-    volumes:
-      - /Users/lepetitdev/Dev/TPdocker/opt/mongodb/db/:/data/db
+      - 3306:3306
+    networks:
+      - back
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    networks:
+      - back
+    ports:
+      - 8181:80
+    environment:
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: root
+      PMA_HOST: mysql
+networks:
+  back:
