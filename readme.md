@@ -1,0 +1,1 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5f30d601fc68446cb9f176533a1f5dc2)](https://www.codacy.com/app/robinalla1512/DevOpsCount?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=cabri89/DevOpsCount&amp;utm_campaign=Badge_Grade)
