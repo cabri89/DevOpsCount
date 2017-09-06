@@ -9,7 +9,7 @@ var connection = mysql.createConnection(cred);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors())
-var port = process.env.PORT || 8081;
+var port = process.env.PORT || 8080;
 
 app.get('/vue',function (req,res) {
 	connection.query("UPDATE vue SET nb_vue = nb_vue+1 WHERE vue.id = 1;",function (error, results, fields) {
@@ -21,6 +21,7 @@ app.get('/vue',function (req,res) {
 	connection.query("SELECT * FROM vue",function (error, results, fields) {
 		try{
 			console.log(results);
+			console.log(error);
 			res.json({data:results[0]});
 		}catch(e){
 

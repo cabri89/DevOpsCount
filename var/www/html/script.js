@@ -1,6 +1,6 @@
 function count() {
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://localhost:8081/vue', true);
+    req.open('GET', 'http://localhost:8080/vue', true);
     req.onload = function (e) {
         if (req.readyState === 4) {
             if (req.status === 200) {

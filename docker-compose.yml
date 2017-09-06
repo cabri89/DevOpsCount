@@ -5,7 +5,7 @@ services:
     ports:
       - '80:80'
     volumes:
-      - /Users/lepetitdev/Dev/TPdocker/var/www:/var/www
+      - /Users/lepetitdev/Dev/DevOpsCount/var/www:/var/www
   mysql:
     image: mysql/mysql-server
     environment:
@@ -14,6 +14,8 @@ services:
       - 3306:3306
     networks:
       - back
+    volumes:
+      - /Users/lepetitdev/Dev/DevOpsCount/mysql:/var/lib/mysql
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     networks:
