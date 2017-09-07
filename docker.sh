@@ -1,3 +1,4 @@
+#!/bin/bash
 docker pull phpmyadmin/phpmyadmin
 docker pull mysql/mysql-server
 docker pull ubuntu

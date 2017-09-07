@@ -21,7 +21,6 @@ app.get('/vue',function (req,res) {
 	connection.query("SELECT * FROM vue",function (error, results, fields) {
 		try{
 			console.log(results);
-			console.log(error);
 			res.json({data:results[0]});
 		}catch(e){
 

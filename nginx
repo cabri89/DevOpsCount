@@ -10,13 +10,12 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y \
 
 COPY var/www/html /var/www/html
 
-COPY node var/www/node /var/www/node
+COPY var/www/node /var/www/node
 
-WORKDIR /var/www/node
+COPY start.sh /start.sh
 
-CMD ["node", "script.js", "&"]
+WORKDIR /
 
-WORKDIR /etc/nginx
-
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["sh", "start.sh"]
 EXPOSE 80
+EXPOSE 8080

@@ -4,8 +4,13 @@ services:
     image: 'nginx'
     ports:
       - '80:80'
+      - '8080:8080'
     volumes:
       - /Users/lepetitdev/Dev/DevOpsCount/var/www:/var/www
+    networks:
+      - back
+    links:
+      - mysql
   mysql:
     image: mysql/mysql-server
     environment:
